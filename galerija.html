@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+		section {
+			position: relative;
+			width: 100%;
+			min-height: 100vh;
+			background: #000;
+			padding: 100px;
+		}
+		section h2 {
+			color: #fff;
+			font-size: 4em;
+		}
+		section p {
+			color: #fff;
+			font-size: 1.2em;
+			font-weight: 300;
+			text-align: justify;
+		}
+		section img {
+			max-width: 100%;
+			margin: 50px 0 0;
+		}
+		.light {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		section p:last-child {
+			font-size: 12px;
+			text-align: center;
+			margin-top: 30px;
+			margin-bottom: 0px;
+		}
+		body {
+			background-color: #000;
+		}
+		a {
+			text-decoration: none;
+			background-color: #000;
+			color: #111;
+			margin-left: 5px;
+			transition: 0.4s;
+		}
+		a:hover {
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+		<section>
+			<div class="light"></div>
+			<h2>Fear of the dark</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<img src="slika2.jpg">
+			<p>Created by Nikola Markovic 2019. &copy</p>
+		</section>
+		<script
+		  src="https://code.jquery.com/jquery-3.4.1.js"
+		  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		  crossorigin="anonymous">
+		 </script>
+		 <script>
+		 	$(function() {
+		 		$(document).mousemove(function(e) {
+		 			var X = e.pageX;
+		 			var Y = e.pageY;
+		 			$('.light').css('background', 'radial-gradient(circle at '+X+'px '+Y+'px, transparent, #000 25%)');
+		 		});
+		 	});
+		 </script>
+		<a href="index.html ">vrati se nazad</a>
+</body>
+</html>

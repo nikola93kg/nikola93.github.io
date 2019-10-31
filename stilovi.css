@@ -1,0 +1,121 @@
+		@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+		* {
+			font-family: 'Poppins', sans-serif;
+		}
+		body {
+			margin-left: 100px;
+			margin-right: 100px;
+			margin-top: 0px;
+			background-image: linear-gradient(120deg, #A771FE, #FFC46B, #782FEF);
+			background-attachment: fixed;
+		}
+		ul {
+			text-align: center;
+			list-style-type: none;
+		}
+		a {
+			text-decoration: none;
+			transition: all 0.7s;
+			color: #2F3538;
+		}
+		a:hover {
+			color: #fff;
+		}
+		li {
+			display: inline-block;
+			font-size: 1.5em;
+			margin-right: 2em;
+			transition: all 0.3s;
+		}
+		li:hover {
+			transform: translate(0, 2px);
+		}
+		.navigacija {
+			opacity: 0.8;
+		}
+		.main {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.omotac {
+			display: flex;
+			text-align: center;
+			flex-wrap: wrap;  
+		}
+		
+		.omotac > * {
+			padding: 0.8em;
+			flex-grow: 1;
+			flex-basis: 100%;
+		}
+		.header {
+			background-color: #888;
+		}
+		.footer {
+			background-color: #777;
+		}
+		.main {
+			background-color: #DAE4E5;
+		}
+		.aside1 {
+			background-color: #8C8C8C;
+			margin-bottom: 10px;
+		}
+		.aside2 {
+			background-color: #333;
+			margin-bottom: 10px;
+		}
+		
+		@media all and (min-width: 800px) {
+			.main, .aside1, .aside2 {
+				flex-grow:3;
+				flex-basis:1; 
+			}
+			.aside1 {
+				order: 1;
+			}
+			.aside2 {
+				order: 3;
+			}
+			.footer {
+				order: 4;
+			}
+
+		}
+		#levo {
+			height: 300px;
+			width: 500px;
+		}
+		#desno {
+			height: 300px;
+			width: 500px;
+		}
+		.aside1 > .div_link{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start; 
+			flex-direction: column;
+			float: left;
+			font-size: 1.2em;
+		}
+		.div_link2 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			flex-direction: column;
+			float: right;
+			font-size: 1.2em;
+		}
+		.div_link2 >a {
+			color: rgba(0,0,0,0.1);
+		}
+		.div_link > a {
+			color: #000;
+			transition: 0.3s;
+		}
+		.div_link > a:hover {
+			color: rgba(255,255,255,0.8);
+		}
+
+

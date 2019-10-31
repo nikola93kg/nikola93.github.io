@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kalkulator</title>
+	<script src="jquery.js"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+		* {
+			font-family: 'Poppins', sans-serif;
+		}
+		body {
+			background-image: linear-gradient(120deg, #3F4C6B, #6D107E, #FFE0BC);
+			background-attachment: fixed;
+		}
+		h2 {
+			margin: 0 auto;
+			width: 50%;
+			text-align: center;
+			box-shadow: 2px 2px 8px #f00;
+			font-size: 1.8em;
+			background-color: #fff;
+			opacity: 0.7;
+			border-radius: 40px;
+			animation-name:naslov;
+			animation-duration: 8s;
+			animation-delay: 10s;
+			color:#000;
+			animation-iteration-count: 1; 
+		}
+		@keyframes naslov {
+		  0% {
+		            transform: translateX(500px);
+		  }
+		  50% {
+		  			transform: translateY(800px);
+		  }
+		  100% {
+		            transform: translateX(-950px) rotate(360deg);
+		  }
+		}
+		.forma {
+			margin: 100px auto;
+			height: 250px;
+			width: 300px;
+			border-radius: 30px;
+			padding: 30px;
+			background-color: rgba(250, 0, 0, 0.7);
+			animation-name:pozadina;
+			animation-duration: 5s;
+			animation-delay: 8s;
+			color:#fff;
+			animation-iteration-count: infinite; 
+		}
+		@keyframes pozadina {
+			0% {
+				background-color: #FE2F57;
+				font-family: Arial;
+			}
+			20% {
+				background-color: #F464FE;
+				font-family: Arial;
+			}
+			50% {
+				background-color: #6D107E;
+				font-family: Times New Roman;
+			}
+			100% {background-color: #FF9966;}
+		}
+		#broj1 {
+			margin-top: 0px;
+			margin-bottom: 5px;
+			display: inline-flex;
+			border-radius: 10px;
+			border: none;
+			padding: 5px;
+		}
+		#broj2 {
+			margin-top: 5px;
+			margin-bottom: 25px;
+			display: inline-flex;
+			border-radius: 10px;
+			border: none;
+			padding: 5px;
+		}
+		#rezultat {
+			display: none;
+			margin-top: 35px;
+			width: 150px;
+			height: 30px;
+			border-radius: 15px;
+			border: none;
+			padding: 5px;
+		}
+		button {
+			border-radius: 10px;
+			border: none;
+			padding: 5px;
+		}
+		.dugme {
+			padding: 10px;
+			width: 40px;
+			margin-bottom: 10px;
+		}
+		a {
+			position: absolute;
+			bottom: 5px;
+			left: 5px;
+			text-decoration: none;
+			color: #111;
+			margin-left: 5px;
+			transition: 0.4s;
+		}
+		a:hover {
+			color: #fff;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("#plus").click(function() {
+				var broj_1 = $("#broj1").val();
+				broj_1 = parseInt(broj_1);
+				var broj_2 = $("#broj2").val();
+				broj_2 = parseInt(broj_2);
+				var zbir = broj_1 + broj_2;
+				var konacan_odg = broj_1 + " + " + broj_2 + " = " + zbir;
+				$("#rezultat").val(konacan_odg);
+			});
+			$("#minus").click(function() {
+				var broj_1 = $("#broj1").val();
+				broj_1 = parseInt(broj_1);
+				var broj_2 = $("#broj2").val();
+				broj_2 = parseInt(broj_2);
+				var oduzimanje = broj_1 - broj_2;
+				var konacan_odg = broj_1 + " - " + broj_2 + " = " + oduzimanje;
+				$("#rezultat").val(konacan_odg);
+			});
+			$("#puta").click(function() {
+				var broj_1 = $("#broj1").val();
+				broj_1 = parseInt(broj_1);
+				var broj_2 = $("#broj2").val();
+				broj_2 = parseInt(broj_2);
+				var mnozenje = broj_1 * broj_2;
+				var konacan_odg = broj_1 + " * " + broj_2 + " = " + mnozenje;
+				$("#rezultat").val(konacan_odg);
+			});
+			$("#podeljeno").click(function() {
+				var broj_1 = $("#broj1").val();
+				broj_1 = parseInt(broj_1);
+				var broj_2 = $("#broj2").val();
+				broj_2 = parseInt(broj_2);
+				var deljenje = broj_1 / broj_2;
+				var konacan_odg = broj_1 + " / " + broj_2 + " = " + deljenje;
+				$("#rezultat").val(konacan_odg);
+			});
+			$("#moduo").click(function() {
+				var broj_1 = $("#broj1").val();
+				broj_1 = parseInt(broj_1);
+				var broj_2 = $("#broj2").val();
+				broj_2 = parseInt(broj_2);
+				var moduo = broj_1 % broj_2;
+				var konacan_odg = broj_1 + " % " + broj_2 + " = " + moduo;
+				$("#rezultat").val(konacan_odg);
+			});
+			$("#plus").click(function() {
+				$("#rezultat").slideDown(800).animate({opacity: 1}, 1000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>Kalkulator</h2>
+
+<div class="forma">
+	<input type="number" min="-500" max="500" id="broj1" placeholder="Prvi broj"><br>
+	<input type="number" min="-500" max="500" id="broj2" placeholder="Drugi broj"><br>
+	<button id="plus" class="dugme">+</button>
+	<button id="minus" class="dugme">-</button>
+	<button id="puta" class="dugme">*</button>
+	<button id="podeljeno" class="dugme">/</button>
+	<button id="moduo" class="dugme">%</button>
+	<button id="stepen" class="dugme">^</button>
+	<button id="celobrojno_deljenje">Celobrojno deljenje</button><br>
+	<input type="text" disabled="disabled" id="rezultat" placeholder="Rezultat">
+</div>
+<a href="index.html ">vrati se nazad</a>
+</body>
+</html>

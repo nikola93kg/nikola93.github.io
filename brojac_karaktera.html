@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Brojac</title>
+	<script src="jquery.js"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+		* {
+			font-family: 'Poppins', sans-serif;
+		}
+		body {
+			background-image: linear-gradient(120deg, #3F4C6B, #6D107E, #782FEF);
+			background-attachment: fixed;
+		}
+		h2 {
+			margin-left: 450px;
+			margin-right: 450px;
+			text-align: center;
+			box-shadow: 2px 2px 8px #f00;
+			font-size: 1.8em;
+			background-color: #fff;
+			opacity: 0.6;
+			border-radius: 40px;
+		}
+		#ime {
+			background-color: #ddd;
+			height: 20px;
+			width: 370px;
+			margin: 100px auto;
+			margin-left: 490px;
+			border-radius: 30px;
+			box-shadow: 5px 8px 28px #0ff;
+			font-size: 14px;
+			text-align: center;
+		}
+		#broj_slova {
+			background-color: #ddd;
+			height: 25px;
+			width: 570px;
+			margin-left: 390px;
+			border-radius: 30px;
+			box-shadow: 5px 8px 28px #0f0;
+			font-size: 22px;
+			text-align: center;
+			overflow: hidden;
+			font-family: Tahoma;
+		}
+		a {
+			position: absolute;
+			bottom: 5px;
+			left: 5px;
+			text-decoration: none;
+			color: #111;
+			margin-left: 5px;
+			transition: 0.4s;
+		}
+		a:hover {
+			color: #fff;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("#ime").keyup(function() {
+				var vrednost = $(this).val();
+				$("#broj_slova").html(vrednost);
+				if (vrednost.length <= 5) {
+					$("#broj_slova").css({"box-shadow": '5px 8px 28px #0ff'});
+				} else if (vrednost.length >= 6 && vrednost.length < 15) {
+					$("#broj_slova").css({"box-shadow": '5px 8px 28px #f00'});
+				} else if (vrednost.length >= 15 && vrednost.length <= 20) {
+					$("#broj_slova").css({"box-shadow": '5px 8px 28px #ff0'});
+				} else {
+					$("#broj_slova").css({"box-shadow": '5px 8px 28px #fff'});
+				}
+			});
+		});
+
+	</script>
+</head>
+<body>
+
+	<h2>Brojač karaktera</h2>
+		<input type="text" id="ime" placeholder="Unesi tekst basak">
+			<p id="broj_slova"></p>
+<a href="index.html ">vrati se nazad</a>
+</body>
+</html>
